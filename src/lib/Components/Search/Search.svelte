@@ -1,7 +1,7 @@
 <script>
 	import { Search } from 'lucide-svelte';
 
-    let {strokeWidth="2"} = $props()
+    let { size="99",strokeWidth="2"} = $props()
 </script>
 
-<Search strokeWidth={strokeWidth}/>
+<Search  size={size} strokeWidth={strokeWidth}/>

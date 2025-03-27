@@ -1,6 +1,6 @@
 <script>
 	import { ShoppingCart } from 'lucide-svelte';
 
-    let {strokeWidth="2"} = $props()
+    let { size="99",strokeWidth="2" } = $props()
 </script>
-<ShoppingCart strokeWidth={strokeWidth}/>
+<ShoppingCart size={size} strokeWidth={strokeWidth}/>
