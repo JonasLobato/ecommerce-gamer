@@ -1,7 +1,9 @@
 <script>
-	import AnnouncementBar from "$lib/Components/AnnouncementBar/AnnouncementBar.svelte";
-	import HeaderWrapper from "$lib/Components/HeaderWrapper/HeaderWrapper.svelte";
+	import AnnouncementBar from '$lib/Components/AnnouncementBar/AnnouncementBar.svelte';
+	import NavBar from '$lib/Components/NavBar/NavBar.svelte';
 </script>
 
-<AnnouncementBar textAnnouncement="text"/>
-<HeaderWrapper/>
+<header>
+	<AnnouncementBar textAnnouncement="text" />
+	<NavBar />
+</header>

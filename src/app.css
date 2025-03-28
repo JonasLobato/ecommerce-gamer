@@ -2,8 +2,17 @@
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
 
-@utility container {
-  margin-inline: auto;
-}
-
 body{background-color: black;}
+@utility container {
+  padding-inline: 1.5rem;
+  margin-inline: auto;
+  @variant sm {
+    padding-inline: 1.5rem;
+  }
+  @variant md {
+    padding-inline: 3rem;
+  }
+  @variant xl {
+    padding-inline: 0;
+  }
+}

@@ -1,7 +1,7 @@
 <script>
-    let {lw="100%", lh="100%"} = $props()
+    let { customClass=""} = $props()
 </script>
-<svg width={lw} height={lh} viewBox="0 0 144 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg class={customClass} viewBox="0 0 144 40" fill="none" xmlns="http://www.w3.org/2000/svg">
 	<path
 		fill-rule="evenodd"
 		clip-rule="evenodd"
