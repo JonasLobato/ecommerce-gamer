@@ -1,30 +1,22 @@
 <script>
-	import { Menu, ShoppingCart, SquareX } from 'lucide-svelte';
+	import { Menu, ShoppingCart } from 'lucide-svelte';
 	import IconLogo from '../Icons/IconLogo.svelte';
+	import Sidebar from '../Sidebar/Sidebar.svelte';
 
 	const menuItens = [
-		{
-			name: "PC",
-			url: "/"
-		},
-		{
-			name: "Playstation",
-			url: "/"
-		},
-		{
-			name: "Xbox",
-			url: "/"
-		},
-		{
-			name: "Nintendo",
-			url: "/"
-		}
+		{name: 'PC', url: '/'},
+		{name: 'Playstation', url: '/'},
+		{name: 'Xbox', url: '/'},
+		{name: 'Nintendo', url: '/'}
 	];
-	let visible = false
-	function toggle(){
-		visible = !visible
+	let visibleMenu = false;
+	let visibleCart = false;
+	function toggle() {
+		visibleMenu = !visibleMenu;
 	}
+	
 
+	
 </script>
 
 <nav class="relative bg-pink-50">
@@ -33,18 +25,5 @@
 		<a href="/"><IconLogo customClass="w-32 h-auto" /></a>
 		<a href="/"><ShoppingCart /></a>
 	</div>
-	<div class="absolute top-0 left-0 bg-white h-screen w-2/3 p-5 xl:hidden" class:hidden={visible == false}>
-		<div class="flex justify-end">
-			<button onclick={toggle}>
-				<SquareX/>
-			</button>
-		</div>
-		<ul class="flex flex-col gap-3">
-			{#each menuItens as {name, url}}
-			<li>
-				<a href="{url}" class=" text-xl">{name}</a>
-			</li>
-			{/each}
-		</ul>
-	</div>
+	<Sidebar {...menuItens} {visibleMenu} {toggle}/>
 </nav>
