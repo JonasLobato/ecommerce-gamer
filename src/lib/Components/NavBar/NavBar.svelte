@@ -19,18 +19,23 @@
 			name: "Nintendo",
 			url: "/"
 		}
-	]
+	];
+	let visible = false
+	function toggle(){
+		visible = !visible
+	}
+
 </script>
 
 <nav class="relative bg-pink-50">
 	<div class="container flex items-center justify-between py-3">
-		<a href="/" class="xl:hidden"><Menu /></a>
+		<a href="/" class="xl:hidden" onclick={toggle}><Menu /></a>
 		<a href="/"><IconLogo customClass="w-32 h-auto" /></a>
 		<a href="/"><ShoppingCart /></a>
 	</div>
-	<div class="absolute top-0 left-0 bg-white h-screen w-2/3 p-5">
-		<div>
-			<button>
+	<div class="absolute top-0 left-0 bg-white h-screen w-2/3 p-5 xl:hidden" class:hidden={visible == false}>
+		<div class="flex justify-end">
+			<button onclick={toggle}>
 				<SquareX/>
 			</button>
 		</div>
