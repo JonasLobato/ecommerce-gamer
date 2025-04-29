@@ -1,24 +1,30 @@
 <script>
-    import { SquareX } from 'lucide-svelte';
+	import { AlignJustify, SquareX } from 'lucide-svelte';
+	import Category from './Category.svelte';
+	import Cart from './Cart.svelte';
 
-    let {visibleMenu, toggle, ... menuItens} = $props()
-    
-    console.log(visibleMenu)
+	let { type = '', visibleMenu, toggle, ...menuItens } = $props();
+
 </script>
+
 <div
-	class="absolute top-0 left-0 h-screen w-2/3 bg-white p-5 xl:hidden"
+	class="absolute top-0 h-screen w-2/3 bg-white p-5 xl:w-96"
 	class:hidden={!visibleMenu}
+	class:xl:hidden={type=='category'}
+	class:left-0={type=='category'}
+	class:right-0={type=='cart'}
 >
-	<div class="flex justify-end">
+	<div class="flex"
+	class:justify-end={type=='category'}
+	class:justify-start={type=='cart'}
+	>
 		<button onclick={toggle}>
 			<SquareX />
 		</button>
 	</div>
-	<ul class="flex flex-col gap-3">
-		{#each menuItens as { name, url }}
-			<li>
-				<a href={url} class=" text-xl">{name}</a>
-			</li>
-		{/each}
-	</ul>
+	{#if type == 'category'}
+		<Category {...menuItens} />
+	{:else if type == 'cart'}
+		<Cart />
+	{/if}
 </div>
