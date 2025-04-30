@@ -1,6 +1,7 @@
 <script>
-	import Header from "$lib/Sections/Header/Header.svelte";
-
+	import Collection from '$lib/Components/Collection/Collection.svelte';
+	import Header from '$lib/Sections/Header/Header.svelte';
 </script>
 
-<Header/>
+<Header />
+<Collection collectionName="Consoles"/>
